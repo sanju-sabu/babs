@@ -1,0 +1,69 @@
+<div class="loader_session" *ngIf='loaderdata'>
+    <div class="loader-4"><span></span>
+  </div>
+  </div>
+<app-navbar></app-navbar>
+
+<div class="detailspage">
+    <div class="container-fluid">
+                   <!-- Page Heading -->
+                   <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">E-Reader   Edit</h1>
+                    
+                    <a class=" d-sm-inline-block btn btn-sm btn-primary shadow-sm"  routerLink="/ereader"><i
+                        class=" fa-sm text-white-50"></i> back</a>
+             
+                            <!-- <ng-template [ngIf]="checker === 'details' ">
+                              <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" (click)="change('additem')"><i
+                                class=" fa-sm text-white-50"></i> Add Links</a>
+                              </ng-template>
+                              <ng-template [ngIf]="checker === 'additem' ">
+                                <a  class="d-none d-sm-inline-block  btn-sm btn btn-outline-warning shadow-sm"  (click)="change('details')"><i
+                                  class=" fa-sm text-white-50"></i> back</a>
+                                </ng-template> -->
+                </div>
+
+<!-- 
+  
+        <input type="file" name="files" multiple id=""  (change)="selectFile($event)" >
+        <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">hooo hii</button>
+
+  -->
+
+  <form [formGroup]="form"  (ngSubmit)="submitLink()">
+    <div class="form-group  my-3">
+       <label>Title</label>
+       <input  type="text"  class="form-control"  formControlName="links"   placeholder="headings">
+
+    </div>
+    <!-- <div class="form-group  my-3">
+      <label >Url Link</label>
+      <input type="url" class="form-control" formControlName="urls"   placeholder="url">
+      <div  *ngIf="urls.touched && urls.invalid">
+        <div id="emailHelp" style="font-size: 15px;" class=" alert alert-danger">Add Link Urls</div>
+        </div>
+    </div> -->
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-group  my-3">
+          <label >E-Reader URL</label>
+          <input type="url" class="form-control" formControlName="urls"   placeholder="Url">
+          <div  *ngIf="urls.touched && urls.invalid">
+            <div id="emailHelp" style="font-size: 15px;" class=" alert alert-danger">E-Reader Urls</div>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group  my-3">
+          <label >Sequance</label>
+          <input type="number" class="form-control" formControlName="order"    min="1" max="100"  placeholder="Order">
+          <div  *ngIf="order.touched && order.invalid">
+            <div id="emailHelp" style="font-size: 15px;" class=" alert alert-danger">Sequantial Order</div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  </div>
